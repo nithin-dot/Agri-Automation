@@ -1,0 +1,38 @@
+Tomato, healthy
+Tomato, Septoria leaf spot
+Corn (maize), healthy
+Peach, healthy
+Apple, Cedar apple rust
+Squash, Powdery mildew
+Grape, healthy
+Tomato, mosaic virus
+Tomato, Bacterial spot
+Corn (maize), Common rust 
+Cherry (including sour), Powdery mildew
+Apple, Apple scab
+Potato, Late blight
+Strawberry, Leaf scorch
+Orange, Haunglongbing (Citrus greening)
+Corn (maize), Northern Leaf Blight
+Tomato, pest attack
+Grape, Black rot
+Pepper, bell Bacterial spot
+Tomato, Early blight
+Blueberry, healthy
+Cherry, (including sour) healthy
+Potato, healthy
+Apple, Black rot
+Grape, Leaf blight (Isariopsis Leaf Spot)
+Tomato, Target Spot
+Tomato, Spider mites Two-spotted spider mite
+Tomato, Tomato Yellow Leaf Curl Virus
+Apple, healthy
+Soybean, healthy
+Grape, Esca (Black Measles)
+Raspberry, healthy
+Strawberry, healthy
+Peach, Bacterial spot
+Potato, Early blight
+Corn (maize), Cercospora leaf spot Gray leaf spot
+Tomato, Leaf Mold
+Tomato, Late blight
