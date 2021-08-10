@@ -1,5 +1,10 @@
 # agro
+<div style="text-align:center">
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/images/logo.png" width="200" height="100">
+</div>
+A new Flutter project to help farmers on various data using Iot
 
+<<<<<<< HEAD
 <div style="text-align:center">
 <img src="https://github.com/nithin-dot/agri-automation/blob/master/images/logo.png" width="200" height="100">
 </div>
@@ -13,3 +18,9 @@ i have attach firebase json to upload in your project in the folder called JsonF
  
 
 
+=======
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/IMG_20210315_112421.jpg" width="300" height="600">
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/IMG_20210315_112446.jpg" width="300" height="600">
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/IMG_20210315_112501.jpg" width="300" height="600">
+
+>>>>>>> 60d7d9431e65ab91aea1db7c7e265a189a65999b
