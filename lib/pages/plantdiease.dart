@@ -176,7 +176,7 @@ class _PlantState extends State<Plant> {
                             //   ],
                             // ),
                             child: Stack(
-                              overflow: Overflow.visible,
+                              clipBehavior: Clip.none,
                               children: [
                                 Column(
                                   children: _recognitions != null
@@ -238,20 +238,29 @@ class _PlantState extends State<Plant> {
                                               //     ),
                                               //   ),
                                               // ),
-                                              RaisedButton(
+                                              ElevatedButton(
                                                 onPressed: () {
                                                   String url = data(index);
                                                   launchURL(url);
                                                 },
                                                 child: Text('Treatment'),
-                                                color: Colors.green,
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateProperty.all<
+                                                          Color>(Colors.green),
+                                                ),
+                                                // color: Colors.green,
                                                 // textColor: Colors.white,
                                                 // elevation: 5,
                                               ),
-                                              RaisedButton(
+                                              ElevatedButton(
                                                 onPressed: null,
                                                 child: Text('NOT'),
-                                                color: Colors.red,
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateProperty.all<
+                                                          Color>(Colors.red),
+                                                ),
                                                 // textColor: Colors.white,
                                                 // elevation: 5,
                                               ),
@@ -326,7 +335,7 @@ class _PlantState extends State<Plant> {
 
     return Scaffold(
       body: Stack(
-        overflow: Overflow.visible,
+        clipBehavior: Clip.none,
         children: stackChildren,
       ),
       floatingActionButton: FloatingActionButton.extended(

@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:agro/Crop/cropdetails.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -39,6 +38,7 @@ class _TemperatureState extends State<Temperature> {
       MyCropList va = new MyCropList.fromJson(jsonResponse);
       setState(() {
         lists = va.myList;
+        // ignore: deprecated_member_use
         land = List(resultList.length);
         List<int>.generate(resultList.length,
             (int inde) => land[inde] = lists[inde].waterFlow);
@@ -78,6 +78,7 @@ class _TemperatureState extends State<Temperature> {
       BuildContext context, int value, String non, Color data, String str) {
     return CircularPercentIndicator(
       radius: 160.0,
+      backgroundColor: Colors.white,
       lineWidth: 18.0,
       animation: true,
       percent: value / 100,
@@ -126,6 +127,7 @@ class _TemperatureState extends State<Temperature> {
               ? databaseReference.child('Irrigation').update({'motor': 0})
               : value == 0 && str == " Motor"
                   ? databaseReference.child('Irrigation').update({'motor': 1})
+                  // ignore: unnecessary_statements
                   : null;
 
           print(value);
@@ -181,15 +183,14 @@ class _TemperatureState extends State<Temperature> {
                         Text(""),
                       ],
                     )
-                  : CircleAvatar(
-                      backgroundColor: Colors.black,
-                      radius: 30,
-                      child: Text(
-                        data.toString(),
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 14, color: Colors.white),
-                      ),
+                  : Text(
+                      data.toString(),
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 25, color: Colors.black),
                     ),
+              SizedBox(
+                height: 15,
+              ),
               Center(
                 child: Row(
                   children: [
@@ -216,43 +217,39 @@ class _TemperatureState extends State<Temperature> {
   Widget build(BuildContext context) {
     if (resultList.length != 0) {
       // int value = resultList.length;
-      return NeumorphicApp(
+      return MaterialApp(
         home: Scaffold(
-          appBar: NeumorphicAppBar(
-            leading: InkWell(
-              onTap: () => {Navigator.popAndPushNamed(context, '/back')},
-              child: Container(
-                decoration: BoxDecoration(
-                  // color: Colors.amber,
-                  shape: BoxShape.circle,
-                  color: Colors.black,
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(3, 3),
-                      color: Colors.black12,
-                      blurRadius: 3,
-                    ),
-                    BoxShadow(
-                      offset: Offset(-3, -3),
-                      color: Colors.white,
-                      blurRadius: 3,
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
+          backgroundColor: Color(0xffa4d7d1),
+          appBar: AppBar(
+            title: Text(
+              "Live Stock",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Color(0xffa4d7d1),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
               ),
+              color: Colors.green,
+              splashColor: Colors.purple,
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/back');
+              },
             ),
           ),
           body: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(
+                  // width: MediaQuery.of(context).size.width / 10,
+                  height: MediaQuery.of(context).size.height / 10,
+                ),
                 Row(
                   children: [
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 10,
+                      // height: MediaQuery.of(context).size.height / 10,
                     ),
                     Column(
                       children: [
@@ -277,7 +274,7 @@ class _TemperatureState extends State<Temperature> {
                             context,
                             temperature,
                             temperature.toString() + " °C",
-                            Colors.red,
+                            Color(0xff292c31),
                             "Temperature"),
                         SizedBox(
                           height: 10,
@@ -286,7 +283,7 @@ class _TemperatureState extends State<Temperature> {
                             context,
                             humidity,
                             humidity.toString() + " %",
-                            Colors.blue,
+                            Color(0xff292c31),
                             "Humidity"),
                       ],
                     ),
@@ -303,7 +300,7 @@ class _TemperatureState extends State<Temperature> {
                     return InkWell(
                       onTap: () => {
                         setState(() {
-                          land[index] == 0
+                          land[index] == 1
                               // ignore: unnecessary_statements
                               ? {
                                   databaseReference
@@ -350,7 +347,7 @@ class _TemperatureState extends State<Temperature> {
                               right: MediaQuery.of(context).size.height / 14,
                               bottom: MediaQuery.of(context).size.width / 11,
                               child: CircleAvatar(
-                                backgroundColor: Colors.greenAccent,
+                                backgroundColor: Color(0xffa4d7d1),
                                 radius: 60,
                               ),
                             ),
@@ -400,7 +397,7 @@ class _TemperatureState extends State<Temperature> {
                                       style: TextStyle(
                                         fontSize: 18.0,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.green,
+                                        color: Color(0xff292c31),
                                       ),
                                     ),
                                   ],

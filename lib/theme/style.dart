@@ -5,6 +5,8 @@ ThemeData appTheme() => ThemeData(
       backgroundColor: Colors.black,
       primaryColor: HexColor('#E2EDF8'),
       accentColor: Colors.blue,
-      cursorColor: Colors.blue,
+    textSelectionTheme: TextSelectionThemeData(cursorColor: Colors.blue,
+    selectionHandleColor: Colors.lightBlue,),
+     
       scaffoldBackgroundColor: HexColor('#E2EDF8'),
     );

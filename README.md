@@ -1,16 +1,15 @@
 # agro
 
-A new Flutter project.
+<div style="text-align:center">
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/images/logo.png" width="200" height="100">
+</div>
+<img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/Dashbord.jpg" width="45%"></img> <img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/Live_stock_Dashboard.jpg" width="45%"></img> <img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/Market_price_dashbord.jpg" width="45%"></img> <img src="https://github.com/nithin-dot/agri-automation/blob/master/screen-shot/watering_Management.jpg" width="45%"></img> 
 
-## Getting Started
+App Intro
 
-This project is a starting point for a Flutter application.
+This app developed for farmers welfare.Among its multiple services, agro App provides frequent crop reminder notification and Market News in local language ,It guide the farmer specific to their crop. Thus, Farmers were informed about the right dosage of input as well as the best available crop consultation. Using this app farmers can find the disease of the plant and treatment for disease....
 
-A few resources to get you started if this is your first Flutter project:
+i have attach firebase json to upload in your project in the folder called JsonFile_firbase
+ 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

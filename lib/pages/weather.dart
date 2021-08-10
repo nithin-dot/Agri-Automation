@@ -1,6 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:intl/intl.dart';
 
 class Weather extends StatefulWidget {
@@ -48,12 +47,17 @@ class _WeatherState extends State<Weather> {
     if (mtemperature != 0) {
       return MaterialApp(
         home: Scaffold(
+          backgroundColor: Color(0xffa4d7d1),
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            title: Text(
+              "Weather",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Color(0xffa4d7d1),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Colors.black,
               ),
               color: Colors.green,
               splashColor: Colors.purple,
@@ -72,7 +76,7 @@ class _WeatherState extends State<Weather> {
                   width: MediaQuery.of(context).size.width / 1.2,
                   // color: Theme.of(context).primaryColor,
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
+                    color: Color(0xff292c31),
                     borderRadius: BorderRadius.all(Radius.circular(22)),
                     boxShadow: [
                       BoxShadow(
@@ -82,7 +86,7 @@ class _WeatherState extends State<Weather> {
                       ),
                       BoxShadow(
                         offset: Offset(-3, -3),
-                        color: Colors.white,
+                        color: Colors.black12,
                         blurRadius: 3,
                       ),
                     ],
@@ -103,7 +107,7 @@ class _WeatherState extends State<Weather> {
                             style: TextStyle(
                               fontSize: 18.0,
                               fontWeight: FontWeight.w800,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -121,7 +125,7 @@ class _WeatherState extends State<Weather> {
                             style: TextStyle(
                               fontSize: 15.0,
                               fontWeight: FontWeight.w300,
-                              color: Colors.grey[800],
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -139,7 +143,7 @@ class _WeatherState extends State<Weather> {
                             style: TextStyle(
                               fontSize: 55.0,
                               fontWeight: FontWeight.w800,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -154,7 +158,7 @@ class _WeatherState extends State<Weather> {
                             style: TextStyle(
                               fontSize: 12.0,
                               fontWeight: FontWeight.w800,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -162,63 +166,12 @@ class _WeatherState extends State<Weather> {
                       SizedBox(
                         height: 15,
                       ),
-                      // Row(
-                      //   children: [
-                      //     SizedBox(
-                      //       width: MediaQuery.of(context).size.width / 1.9,
-                      //     ),
-                      //     Text(
-                      //       "precipitation:" + precipitation() + "%",
-                      //       style: TextStyle(
-                      //         fontSize: 12.0,
-                      //         fontWeight: FontWeight.w800,
-                      //         color: Colors.black,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                      // SizedBox(
-                      //   height: 5,
-                      // ),
-                      // Row(
-                      //   children: [
-                      //     SizedBox(
-                      //       width: MediaQuery.of(context).size.width / 1.9,
-                      //     ),
-                      //     Text(
-                      //       "humidity:" + humidity() + "%",
-                      //       style: TextStyle(
-                      //         fontSize: 12.0,
-                      //         fontWeight: FontWeight.w800,
-                      //         color: Colors.black,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                      // SizedBox(
-                      //   height: 5,
-                      // ),
-                      // Row(
-                      //   children: [
-                      //     SizedBox(
-                      //       width: MediaQuery.of(context).size.width / 1.9,
-                      //     ),
-                      //     Text(
-                      //       "wind :" + wind() + "k/h",
-                      //       style: TextStyle(
-                      //         fontSize: 12.0,
-                      //         fontWeight: FontWeight.w800,
-                      //         color: Colors.black,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // )
                     ],
                   )),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 20.0),
                 height: MediaQuery.of(context).size.height / 2.8,
-                color: Theme.of(context).primaryColor,
+                color: Color(0xffa4d7d1),
                 // width: MediaQuery.of(context).size.width / 1.2,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -246,7 +199,7 @@ class _WeatherState extends State<Weather> {
                 width: MediaQuery.of(context).size.width / 0.2,
                 // color: Theme.of(context).primaryColor,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Color(0xff292c31),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15.0),
                       topRight: Radius.circular(15.0)),
@@ -258,7 +211,7 @@ class _WeatherState extends State<Weather> {
                     ),
                     BoxShadow(
                       offset: Offset(-3, -3),
-                      color: Colors.white,
+                      color: Colors.black12,
                       blurRadius: 3,
                     ),
                   ],
@@ -281,7 +234,7 @@ class _WeatherState extends State<Weather> {
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.w800,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(
@@ -293,7 +246,7 @@ class _WeatherState extends State<Weather> {
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.w800,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -313,7 +266,7 @@ class _WeatherState extends State<Weather> {
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.w800,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                         SizedBox(
@@ -325,7 +278,7 @@ class _WeatherState extends State<Weather> {
                           style: TextStyle(
                             fontSize: 18.0,
                             fontWeight: FontWeight.w800,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -348,7 +301,7 @@ class _WeatherState extends State<Weather> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.orangeAccent,
+        color: Color(0xff292c31),
         boxShadow: [
           BoxShadow(
             offset: Offset(3, 3),
@@ -357,7 +310,7 @@ class _WeatherState extends State<Weather> {
           ),
           BoxShadow(
             offset: Offset(-3, -3),
-            color: Colors.white,
+            color: Colors.black12,
             blurRadius: 3,
           ),
         ],
@@ -368,15 +321,19 @@ class _WeatherState extends State<Weather> {
             SizedBox(
               height: 60,
             ),
-            Text(data),
+            Text(
+              data,
+              style: TextStyle(color: Colors.white),
+            ),
             SizedBox(
               height: 30,
             ),
-            Icon(IconData(value, fontFamily: 'MaterialIcons')),
+            Icon(IconData(value, fontFamily: 'MaterialIcons'),
+                color: Colors.white),
             SizedBox(
               height: 20,
             ),
-            Text(temp)
+            Text(temp, style: TextStyle(color: Colors.white))
           ],
         ),
       ),

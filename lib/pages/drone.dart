@@ -15,8 +15,7 @@ class Drone extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 2.5,
                   width: MediaQuery.of(context).size.width / 2.2,
                   child: JoystickView(
-                      onDirectionChanged: (degrees, distance) =>
-                          {print(degrees)},
+                      onDirectionChanged: (degrees, distance) => {},//degree
                       size: 120,
                       iconsColor: Colors.white,
                       backgroundColor: Colors.white,
@@ -27,7 +26,7 @@ class Drone extends StatelessWidget {
                   height: 240,
                 ),
                 InkWell(
-                  onTap: () => {print("Down")},
+                  onTap: () => {},//down
                   child: Align(
                     alignment: Alignment.center,
                     child: Padding(
@@ -47,7 +46,7 @@ class Drone extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () => {print("UP")},
+                  onTap: () => {},//up
                   child: Align(
                     alignment: Alignment.center,
                     child: Padding(
@@ -77,7 +76,7 @@ class Drone extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 2.5,
                 width: MediaQuery.of(context).size.width / 2.2,
                 child: JoystickView(
-                    onDirectionChanged: (degrees, distance) => {print(degrees)},
+                    onDirectionChanged: (degrees, distance) => {},//degree
                     size: 120,
                     iconsColor: Colors.white,
                     backgroundColor: Colors.white,

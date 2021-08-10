@@ -1,0 +1,268 @@
+{
+  "Animal" : {
+    "camera" : "https://www.thecocktaildb.com/api.php?ref=apilist.fun",
+    "value" : 0
+  },
+  "Crop Growth" : [ {
+    "name" : "Paddy",
+    "nutrient" : "phosphorus,Urea,Nitrogen",
+    "percentage" : "90,46,34",
+    "waterlevel" : 76
+  }, {
+    "name" : "Sugaracane",
+    "nutrient" : "nitrogen,phosphorus,magnesium,sulfur,silicon",
+    "percentage" : "45,67,23,89,34",
+    "waterlevel" : 56
+  } ],
+  "Crop Guidance" : {
+    "value" : [ null, {
+      "crop" : "https://api.flutter.dev/"
+    } ]
+  },
+  "Crop News" : [ null, "http://newsapi.org/v2/everything?q=bitcoin&from=2020-09-25&sortBy=publishedAt&apiKey=API_KEY" ],
+  "Crop Price" : {
+    "Data" : [ {
+      "crop" : "Bagalore Tomato (Bagalore Thakkali)",
+      "price" : "45.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Beas (Beas)",
+      "price" : "80.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Beetroot (Beetroot)",
+      "price" : "45.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Bitter Gourd (Pavakkai)",
+      "price" : "60.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Bottle Gourd (Suraikai)",
+      "price" : "20.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Brijal (Kathirikkai)",
+      "price" : "40.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Broad Beas (Avarakkai)",
+      "price" : "45.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Cabbage (Muttaikose)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Capsicum (Kudamilagai)",
+      "price" : "55.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Carrot (Carrot)",
+      "price" : "50.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Cauliflower (Cauliflower)",
+      "price" : "45.00",
+      "quantity" : "1 Piece"
+    }, {
+      "crop" : "Chayote (Chow Chow)",
+      "price" : "35.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Colocasia (Seppakilagu)",
+      "price" : "50.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Coriader Leaves (Kothamalli)",
+      "price" : "20.00",
+      "quantity" : "1 Buch"
+    }, {
+      "crop" : "Cucumber (Vellarikka)",
+      "price" : "30.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Drumstick (Murugakkai)",
+      "price" : "60.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Giger (Iji)",
+      "price" : "240.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Gree Chili (Pachai Milagai)",
+      "price" : "40.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Gree Platai (Valakkai)",
+      "price" : "10.00",
+      "quantity" : "1 Piece"
+    }, {
+      "crop" : "Kohlrabi (Nookal)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Ladies Figer (Vedakkai)",
+      "price" : "35.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Mit (Pudia)",
+      "price" : "10.00",
+      "quantity" : "1 Buch"
+    }, {
+      "crop" : "Oio (Vegayam)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Oio (Small) (Chia Vegayam)",
+      "price" : "70.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Platai Flower (Vazhaipoo)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Platai Stem (Vazhaithadu)",
+      "price" : "10.00",
+      "quantity" : "1 Piece"
+    }, {
+      "crop" : "Potato (Urulaikilagu)",
+      "price" : "20.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Pumpki (Poosaikai)",
+      "price" : "20.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Radish (Mullagi)",
+      "price" : "30.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Ridge Gourd (Peerkagai)",
+      "price" : "20.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Scarlet Gourd (Kovakkai)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Sake Gourd (Pudalagai)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Sweet Potato (Sakkaravalli Kizhagu)",
+      "price" : "25.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Tapioca (Maravalli Kizhagu)",
+      "price" : "30.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Tomato (Thakkali)",
+      "price" : "40.00",
+      "quantity" : "1 Kg"
+    }, {
+      "crop" : "Yam (Karuai Kilagu)",
+      "price" : "75.00",
+      "quantity" : "1 Kg"
+    } ],
+    "Listv" : [ {
+      "charts" : 1,
+      "colordata" : 0,
+      "name" : "Mandi Price",
+      "per" : 4,
+      "price" : 67,
+      "status" : "↑"
+    }, {
+      "charts" : 0,
+      "colordata" : 1,
+      "name" : "Today GDB",
+      "per" : 3,
+      "price" : 47,
+      "status" : "↓"
+    } ],
+    "val" : "34K"
+  },
+  "Drone" : {
+    "down" : "124,234",
+    "left" : "234,-567",
+    "right" : "456,123",
+    "straight" : "345,-167",
+    "up" : "90,567"
+  },
+  "Irrigation" : {
+    "Ph" : 8.1,
+    "humidity" : 45,
+    "lands" : [ {
+      "cropName" : "sugarcane",
+      "humidity" : 60,
+      "waterFlow" : 1
+    }, {
+      "cropName" : "paddy",
+      "humidity" : 60,
+      "waterFlow" : 0
+    }, {
+      "cropName" : "groundnut",
+      "humidity" : 60,
+      "waterFlow" : 1
+    }, {
+      "cropName" : "wheat",
+      "humidity" : 90,
+      "waterFlow" : 0
+    } ],
+    "moisture" : 45,
+    "motor" : 1,
+    "temperature" : 24
+  },
+  "Live Stock" : {
+    "Cows" : [ {
+      "health" : 89,
+      "name" : "lily",
+      "quality" : 98,
+      "temp" : 78,
+      "yield" : 76
+    }, {
+      "health" : 78,
+      "name" : "sam",
+      "quality" : 56,
+      "temp" : 90,
+      "yield" : 0
+    }, {
+      "health" : 76,
+      "name" : "billy",
+      "quality" : 78,
+      "temp" : 86,
+      "yield" : 89
+    }, {
+      "health" : 56,
+      "name" : "brwo",
+      "quality" : 98,
+      "temp" : 98,
+      "yield" : 90
+    } ],
+    "Kgs" : 19,
+    "Milking" : 6,
+    "Nonpregnant" : 3,
+    "Price" : 29,
+    "Total" : 12,
+    "anoestrus" : 0,
+    "barren" : 0,
+    "dry" : 1,
+    "open" : 3,
+    "pregnant" : 3
+  },
+  "Plant Disease" : {
+    "Api" : "https://developers.google.com/prediction/docs/developer-guide",
+    "Errordata" : "https://cloud.google.com/datastore/"
+  },
+  "Weather" : {
+    "humidity" : 56,
+    "mtemperature" : 35,
+    "temp1" : 34,
+    "temp2" : 45,
+    "temp3" : 32,
+    "uv" : 1,
+    "visi" : 25,
+    "wind" : 25
+  }
+}

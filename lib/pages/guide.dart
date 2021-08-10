@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:neuomorphic_container/neuomorphic_container.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class Guide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return NeumorphicApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       // title: 'dEMO',
 
@@ -42,7 +41,7 @@ class _SearchListState extends State<SearchList> {
   final key = GlobalKey<ScaffoldState>();
   final TextEditingController _searchQuery = TextEditingController();
   List<Building> _list;
-  List<Building> _searchList = List();
+  List<Building> _searchList = [];
 
   String _searchText = "";
   _SearchListState() {
@@ -67,7 +66,7 @@ class _SearchListState extends State<SearchList> {
   }
 
   void init() {
-    _list = List();
+    _list = [];
     _list.add(
       Building(
         id: "1",
@@ -166,18 +165,26 @@ class _SearchListState extends State<SearchList> {
   }
 
   Widget buildBar(BuildContext context) {
-    return NeumorphicAppBar(
+    return AppBar(
         centerTitle: true,
         title: appBarTitle,
+        backgroundColor: Color(0xffa4d7d1),
         actions: <Widget>[
-          InkWell(
-            onTap: () {
+          new IconButton(
+            icon: actionIcon,
+            onPressed: () {
               setState(() {
-                if (this.actionIcon.icon == Icons.search) {
-                  this.actionIcon = Icon(
-                    Icons.close,
-                    color: Colors.white,
-                  );
+                this.actionIcon.icon == Icons.close
+                    ? this.actionIcon = Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      )
+                    : this.actionIcon = Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      );
+
+                if (this.actionIcon.icon == Icons.close) {
                   this.appBarTitle = TextField(
                     controller: _searchQuery,
                     style: TextStyle(
@@ -187,37 +194,22 @@ class _SearchListState extends State<SearchList> {
                         hintText: "Search here..",
                         hintStyle: TextStyle(color: Colors.black)),
                   );
-                  _handleSearchStart();
                 } else {
-                  _handleSearchEnd();
+                  this.appBarTitle = Text(
+                    "Guide",
+                    style: TextStyle(color: Colors.black),
+                  );
+                  _searchQuery.clear();
                 }
               });
             },
-            child: NeuomorphicContainer(
-              shape: BoxShape.circle,
-              child: Icon(Icons.search),
-              color: Colors.white,
-            ),
+            // child: Container(
+            //   // shape: BoxShape.circle,
+            //   child: Icon(Icons.search),
+            //   color: Color(0xffa4d7d1),
+            // ),
           ),
         ]);
-  }
-
-  void _handleSearchStart() {
-    setState(() {});
-  }
-
-  void _handleSearchEnd() {
-    setState(() {
-      this.actionIcon = Icon(
-        Icons.search,
-        color: Colors.white,
-      );
-      this.appBarTitle = Text(
-        "Guide",
-        style: TextStyle(color: Colors.black),
-      );
-      _searchQuery.clear();
-    });
   }
 }
 
@@ -230,7 +222,7 @@ class Uiitem extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.fromLTRB(15, 5, 5, 7),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Color(0xffa4d7d1),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(

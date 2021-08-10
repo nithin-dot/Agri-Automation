@@ -6,7 +6,7 @@ class MyListList {
   });
 
   factory MyListList.fromJson(List<dynamic> parsedJson) {
-    List<MyList> myList = new List<MyList>();
+    List<MyList> myList = <MyList>[];
     myList = parsedJson.map((i) => MyList.fromJson(i)).toList();
 
     return new MyListList(myList: myList);

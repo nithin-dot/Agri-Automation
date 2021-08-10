@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:agro/Crop/animaldetails.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LineChartSample2 extends StatefulWidget {
@@ -30,12 +29,7 @@ int barren = 0;
 int pregnant = 0;
 int price = 0;
 int open = 0;
-List<int> val = [
-  0xfffd6768,
-  0xff109da4,
-  0xfff0981a,
-  0xff48294b,
-];
+
 List<dynamic> resultList = [];
 var lists;
 
@@ -77,11 +71,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
       setState(() {
         lists = va.myList;
       });
-
-      // va.forEach((data) => print(data.waterFlow));
-      // print(lists.cropName);
       resultList = snapshot.value;
-      print(resultList.length);
     });
   }
 
@@ -89,16 +79,20 @@ class _LineChartSample2State extends State<LineChartSample2> {
   Widget build(BuildContext context) {
     var feature = [total, milking, 'Rs : ' + price.toString(), kgs];
     var feature1 = [nonpregnant, anoestrus, barren, pregnant, dry, open];
-
     if (resultList.length != 0) {
       return MaterialApp(
         home: Scaffold(
+          backgroundColor: Color(0xffa4d7d1),
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            title: Text(
+              "Live Stock",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Color(0xffa4d7d1),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Colors.black,
               ),
               color: Colors.green,
               splashColor: Colors.purple,
@@ -120,41 +114,32 @@ class _LineChartSample2State extends State<LineChartSample2> {
                     padding: EdgeInsets.all(32.0),
                     children: List.generate(feature.length, (index) {
                       return Container(
-                        // padding: const EdgeInsets.all(10.0),
                         height: MediaQuery.of(context).size.height / 6,
                         width: MediaQuery.of(context).size.width / 2.5,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(26.0)),
-                          color: Color(val[index]),
-                          boxShadow: [
-                            BoxShadow(
-                              offset: Offset(3, 3),
-                              color: Colors.black12,
-                              blurRadius: 3,
-                            ),
-                            BoxShadow(
-                              offset: Offset(-3, -3),
-                              color: Colors.white,
-                              blurRadius: 3,
-                            ),
-                          ],
-                        ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(26.0)),
+                            color: Color(0xff292c31),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Color(0xffa4d7d1),
+                                  offset: Offset(3.0, 3.0),
+                                  blurRadius: 15.0,
+                                  spreadRadius: 1.0),
+                              BoxShadow(
+                                  color: Color(0xff292c31),
+                                  offset: Offset(-5.0, -5.0),
+                                  blurRadius: 15.0,
+                                  spreadRadius: 1.0),
+                            ]),
                         child: Stack(
                           children: [
                             Positioned(
-                              left: 80,
-                              bottom: 60,
+                              left: 70,
+                              bottom: 70,
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                radius: 60,
-                              ),
-                            ),
-                            Positioned(
-                              left: 90,
-                              bottom: 85,
-                              child: Icon(
-                                Icons.bubble_chart,
-                                size: 58,
+                                backgroundColor: Color(0xffa4d7d1),
+                                radius: 52,
                               ),
                             ),
                             Column(
@@ -216,7 +201,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                         "Fertility Summary",
                         style: TextStyle(
                           fontSize: 18.0,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       )
@@ -226,17 +211,23 @@ class _LineChartSample2State extends State<LineChartSample2> {
                     primary: false,
                     shrinkWrap: true,
                     crossAxisCount: 3,
-                    mainAxisSpacing: 2,
-                    crossAxisSpacing: 2,
-                    padding: EdgeInsets.all(32.0),
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                    padding: EdgeInsets.all(30.0),
                     children: List.generate(feature1.length, (index) {
                       return Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                          color: Color(0xffa4d7d1),
                           boxShadow: [
                             BoxShadow(
                               offset: Offset(3, 3),
                               color: Colors.black12,
+                              blurRadius: 3,
+                            ),
+                            BoxShadow(
+                              offset: Offset(-3, -3),
+                              color: Color(0xffa4d7d1),
                               blurRadius: 3,
                             ),
                           ],
@@ -311,7 +302,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16.0)),
-                              color: Colors.white,
+                              color: Color(0xff292c31),
                               boxShadow: [
                                 BoxShadow(
                                   offset: Offset(3, 3),
@@ -337,25 +328,26 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                     Container(
                                         height: 30,
                                         width: 200,
-                                        color: Colors.blueGrey,
+                                        color: Color(0xffa4d7d1),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.end,
                                           children: [
                                             Text(
-                                              lists[index].name,
+                                              lists[index].name.toUpperCase(),
                                               style: TextStyle(
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.white,
+                                                color: Colors.black,
                                               ),
                                             ),
                                             SizedBox(
-                                              width: 20,
-                                            )
+                                              width: 10,
+                                            ),
+                                            Icon(FontAwesomeIcons.snapchatGhost,
+                                                color: Colors.black),
                                           ],
                                         )),
-                                    Icon(FontAwesomeIcons.snapchatGhost)
                                   ],
                                 ),
                                 SizedBox(
@@ -383,7 +375,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                               style: TextStyle(
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                                color: Colors.white,
                                               ),
                                             ),
                                             SizedBox(
@@ -396,7 +388,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                                       fontSize: 18.0,
                                                       fontWeight:
                                                           FontWeight.bold,
-                                                      color: Colors.black,
+                                                      color: Colors.white,
                                                     ),
                                                   )
                                                 : Text(
@@ -409,7 +401,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                                       fontSize: 18.0,
                                                       fontWeight:
                                                           FontWeight.bold,
-                                                      color: Colors.black,
+                                                      color: Colors.white,
                                                     ),
                                                   )
                                           ],
@@ -443,7 +435,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                               style: TextStyle(
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                                color: Colors.white,
                                               ),
                                             ),
                                             SizedBox(
@@ -456,7 +448,7 @@ class _LineChartSample2State extends State<LineChartSample2> {
                                               style: TextStyle(
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                                color: Colors.white,
                                               ),
                                             ),
                                           ],

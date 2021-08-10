@@ -305,11 +305,15 @@ class _PriceState extends State<Price> {
       return MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.black,
+            title: Text(
+              "Crop Price",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Color(0xffa4d7d1),
             leading: IconButton(
               icon: Icon(
                 Icons.arrow_back,
-                color: Colors.white,
+                color: Colors.black,
               ),
               color: Colors.green,
               splashColor: Colors.purple,

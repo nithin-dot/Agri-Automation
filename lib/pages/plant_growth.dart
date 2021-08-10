@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:quiver/iterables.dart';
 import 'package:agro/Crop/cropmanage.dart';
 import 'package:agro/models/indicator.dart';
@@ -62,34 +61,24 @@ class PieChart2State extends State {
   @override
   Widget build(BuildContext context) {
     if (resultList.length != 0) {
-      return NeumorphicApp(
+      return MaterialApp(
         home: Scaffold(
-          appBar: NeumorphicAppBar(
-            leading: InkWell(
-              onTap: () => {Navigator.popAndPushNamed(context, '/back')},
-              child: Container(
-                decoration: BoxDecoration(
-                  // color: Colors.amber,
-                  shape: BoxShape.circle,
-                  color: Colors.black,
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(3, 3),
-                      color: Colors.black12,
-                      blurRadius: 3,
-                    ),
-                    BoxShadow(
-                      offset: Offset(-3, -3),
-                      color: Colors.white,
-                      blurRadius: 3,
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
+          appBar: AppBar(
+            title: Text(
+              "Crop Growth",
+              style: TextStyle(color: Colors.black),
+            ),
+            backgroundColor: Color(0xffa4d7d1),
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
               ),
+              color: Colors.green,
+              splashColor: Colors.purple,
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/back');
+              },
             ),
           ),
           body: ListView.builder(
@@ -104,7 +93,7 @@ class PieChart2State extends State {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Card(
-                    color: Colors.white,
+                    color: Color(0xffa4d7d1),
                     child: Column(
                       children: [
                         SizedBox(

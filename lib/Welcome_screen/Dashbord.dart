@@ -1,16 +1,14 @@
-import 'dart:async';
 import 'package:agro/models/service.dart';
-import 'package:agro/utilities/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:neuomorphic_container/neuomorphic_container.dart';
 
-class ChooseDevice extends StatefulWidget {
+class DashBord extends StatefulWidget {
+  static String id = '/back';
   @override
-  State createState() => ChooseDeviceState();
+  State createState() => DashBordState();
 }
 
-class ChooseDeviceState extends State<ChooseDevice> {
+class DashBordState extends State<DashBord> {
   static final databaseReference = FirebaseDatabase.instance.reference();
 
   List<String> list = [];
@@ -23,83 +21,70 @@ class ChooseDeviceState extends State<ChooseDevice> {
       values.forEach((key, values) {
         setState(() {
           list.add(key);
-          // print(list);
-          // print(list);
         });
       });
     });
   }
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
-    // print(list.length);
+  Widget build(BuildContext context) {
     if (list.length != 0) {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-          // backgroundColor: Colors.green,
+          backgroundColor: Color(0xffa4d7d1),
           body: SingleChildScrollView(
             child: Container(
-              // margin: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Stack(
                 children: [
-                  Positioned(
-                    child: ClipPath(
-                      clipper: CurvedClipper(),
-                      child: NeuomorphicContainer(
-                        height: MediaQuery.of(context).size.height / 1.45,
-                        width: MediaQuery.of(context).size.width / 0.3,
-                        color: Colors.black,
-                        child: Column(
+                  Container(
+                    height: MediaQuery.of(context).size.height / 1.45,
+                    width: MediaQuery.of(context).size.width / 0.3,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 120.0,
+                        ),
+                        Row(
                           children: <Widget>[
                             SizedBox(
-                              height: 120.0,
+                              width: 40,
                             ),
-                            Row(
-                              children: <Widget>[
-                                SizedBox(
-                                  width: 60,
-                                ),
-                                Text(
-                                  "AGRO",
-                                  style: TextStyle(
-                                    fontSize: 28.0,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
+                            Text(
+                              "AGRO",
+                              style: TextStyle(
+                                fontSize: 37.0,
+                                color: Color(0xff292c31),
+                                fontWeight: FontWeight.bold,
+                                decorationThickness: 200,
+                              ),
                             ),
-                            Row(
-                              children: [
-                                SizedBox(
-                                  width: 60,
-                                ),
-                                Text(
-                                  'Monitoring',
-                                  style: TextStyle(
-                                    fontSize: 27.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    decorationThickness: 200,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ],
-                            )
                           ],
                         ),
-                      ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Text(
+                              'MONITORING',
+                              style: TextStyle(
+                                fontSize: 34.0,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff292c31),
+                                decorationThickness: 200,
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ],
+                        )
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 80,
                   ),
                   Column(
                     children: [
                       SizedBox(
-                        height: 200,
+                        height: 260,
                       ),
                       Container(
                         alignment: Alignment.center,
@@ -117,6 +102,7 @@ class ChooseDeviceState extends State<ChooseDevice> {
         ),
       );
     } else {
+      
       return Scaffold(
         body: Center(child: CircularProgressIndicator()),
       );
@@ -129,13 +115,13 @@ class ChooseDeviceState extends State<ChooseDevice> {
       i,
       (index) => Padding(
         padding: const EdgeInsets.only(
-            left: 8.0, right: 8.0, bottom: 25.0, top: 8.0),
+            left: 20.0, right: 20.0, bottom: 25.0, top: 8.0),
         child: _buildContainer(inde, index, context),
       ),
     );
   }
 
-  InkWell _buildContainer(int inde, int index, BuildContext context) {
+  GestureDetector _buildContainer(int inde, int index, BuildContext context) {
     BorderRadius borderRaidus;
 
     if (index == 0) {
@@ -149,8 +135,7 @@ class ChooseDeviceState extends State<ChooseDevice> {
     } else {
       borderRaidus = BorderRadius.all(Radius.circular(0.0));
     }
-    // print(list[10]);
-    return InkWell(
+    return GestureDetector(
       onTap: () => {
         Navigator.pushNamed(context, '/' + list[index].toString()),
       },
@@ -168,7 +153,7 @@ class ChooseDeviceState extends State<ChooseDevice> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Icon(Service.getHomeService(list[index]),
-                      color: Colors.black),
+                      color: Color(0xffa4d7d1)),
                 ],
               ),
               Text(
@@ -176,41 +161,28 @@ class ChooseDeviceState extends State<ChooseDevice> {
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
+                  color: Color(0xffa4d7d1),
                 ),
               ),
             ],
           ),
         ),
         decoration: BoxDecoration(
-          borderRadius: borderRaidus,
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(3, 3),
-                color: Colors.black12,
-                blurRadius: 60,
-                spreadRadius: 27),
-          ],
-        ),
+            borderRadius: borderRaidus,
+            color: Color(0xff292c31),
+            boxShadow: [
+              BoxShadow(
+                  color: Color(0xffa4d7d1),
+                  offset: Offset(3.0, 3.0),
+                  blurRadius: 15.0,
+                  spreadRadius: 1.0),
+              BoxShadow(
+                  color: Color(0xff292c31),
+                  offset: Offset(-5.0, -5.0),
+                  blurRadius: 15.0,
+                  spreadRadius: 1.0),
+            ]),
       ),
     );
   }
-}
-
-class CurvedClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 18);
-    path.quadraticBezierTo(
-        size.width / 90, size.height, size.width, size.height - 90);
-    path.lineTo(size.width, 0);
-
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
